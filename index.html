@@ -12,35 +12,28 @@
       text-align: center;
       font-family: 'Quicksand', sans-serif;
       background: linear-gradient(to right, #cce5ff, #b3d1ff);
-      overflow-x: hidden;
     }
     header {
-      padding: 50px 20px;
+      padding: 40px 20px;
       background-color: #6699cc;
       color: white;
-      position: relative;
     }
     header h1 {
       font-family: 'Pacifico', cursive;
       font-size: 3em;
       margin: 0;
     }
-    .popper {
+    .party-poppers {
       font-size: 2.5rem;
-      animation: pop 0.6s ease-in-out infinite alternate;
-      position: absolute;
+      animation: bounce 1s infinite alternate;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 10px;
     }
-    .popper.left {
-      top: 10px;
-      left: 15px;
-    }
-    .popper.right {
-      top: 10px;
-      right: 15px;
-    }
-    @keyframes pop {
-      from { transform: rotate(-10deg) scale(1); }
-      to { transform: rotate(10deg) scale(1.2); }
+    @keyframes bounce {
+      from { transform: scale(1); }
+      to { transform: scale(1.2); }
     }
     .message {
       padding: 30px;
@@ -49,11 +42,11 @@
     }
     .gallery {
       display: flex;
-      flex-wrap: nowrap;
       justify-content: center;
       gap: 20px;
       padding: 20px;
       overflow-x: auto;
+      flex-wrap: nowrap;
     }
     .gallery img {
       max-width: 250px;
@@ -75,5 +68,42 @@
 </head>
 <body>
   <header>
-    <div class="popper left">🎉</div>
-    <h1>Happy Birthday, Adi! 🎂</
+    <h1>🎉 Happy Birthday, Adi! 🎉</h1>
+    <div class="party-poppers">
+      <span>🎊</span>
+      <span>🎉</span>
+      <span>🎊</span>
+    </div>
+  </header>
+
+  <section class="message">
+    <p><strong>From Sakshi:</strong><br>
+      Happiest Birthday, Adi! 🎂 Wishing you a day filled with smiles, laughter, and everything your heart desires. Thank you for being my constant through every high and low. I cherish all our moments of fun and joy. Stay blessed and keep shining always! 💖</p>
+    <p><strong>From Rishita:</strong><br>
+      You’ve filled my life with love and laughter. May this day bring you as much happiness as you’ve given me. Sending lots of love and blessings your way! 💖</p>
+  </section>
+
+  <section class="gallery">
+    <img src="https://sakshi0300.github.io/HappyBirthdayAdi/photo1.jpg" alt="Photo 1">
+    <img src="https://sakshi0300.github.io/HappyBirthdayAdi/photo2.jpg" alt="Photo 2">
+    <img src="https://sakshi0300.github.io/HappyBirthdayAdi/photo3.jpg" alt="Photo 3">
+    <img src="https://sakshi0300.github.io/HappyBirthdayAdi/photo5.jpg" alt="Photo 5">
+  </section>
+
+  <footer>
+    <p>🎈 Made with love for a very special person 💕</p>
+  </footer>
+
+  <!-- Confetti burst on load -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script>
+    window.onload = () => {
+      confetti({
+        particleCount: 200,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
+    };
+  </script>
+</body>
+</html>
