@@ -16,7 +16,9 @@
 
     header {
       padding: 60px 20px;
-      background: linear-gradient(to right, #2c3e50, #3498db); /* Blue gradient in header */
+      background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
       color: white;
       box-shadow: 0 10px 25px rgba(0,0,0,0.2);
       position: relative;
@@ -47,6 +49,19 @@
       }
       to {
         text-shadow: 0 0 20px #99ccff, 0 0 30px #99ccff;
+      }
+    }
+
+    /* Gradient animation */
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
       }
     }
 
