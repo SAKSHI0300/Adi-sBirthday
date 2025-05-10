@@ -18,11 +18,29 @@
       padding: 50px 20px;
       background-color: #6699cc;
       color: white;
+      position: relative;
     }
     header h1 {
       font-family: 'Pacifico', cursive;
       font-size: 3em;
       margin: 0;
+    }
+    .popper {
+      font-size: 2.5rem;
+      animation: pop 0.6s ease-in-out infinite alternate;
+      position: absolute;
+    }
+    .popper.left {
+      top: 10px;
+      left: 15px;
+    }
+    .popper.right {
+      top: 10px;
+      right: 15px;
+    }
+    @keyframes pop {
+      from { transform: rotate(-10deg) scale(1); }
+      to { transform: rotate(10deg) scale(1.2); }
     }
     .message {
       padding: 30px;
@@ -31,16 +49,19 @@
     }
     .gallery {
       display: flex;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       justify-content: center;
-      gap: 15px;
+      gap: 20px;
       padding: 20px;
+      overflow-x: auto;
     }
     .gallery img {
-      max-width: 300px;
+      max-width: 250px;
+      height: auto;
       border-radius: 15px;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
       transition: transform 0.3s;
+      flex-shrink: 0;
     }
     .gallery img:hover {
       transform: scale(1.05);
@@ -50,79 +71,9 @@
       color: white;
       padding: 20px;
     }
-
-    /* Balloon animation */
-    .balloon {
-      position: absolute;
-      width: 50px;
-      height: 70px;
-      background-color: #ff99cc;
-      border-radius: 50% 50% 45% 45%;
-      animation: float 8s infinite ease-in;
-      opacity: 0.7;
-    }
-    .balloon::after {
-      content: '';
-      position: absolute;
-      bottom: -20px;
-      left: 50%;
-      width: 2px;
-      height: 20px;
-      background: #555;
-    }
-    @keyframes float {
-      0% { transform: translateY(100vh) rotate(0deg); }
-      100% { transform: translateY(-150px) rotate(360deg); }
-    }
   </style>
 </head>
 <body>
   <header>
-    <h1>🎉 Happy Birthday, Adi! 🎉</h1>
-  </header>
-
-  <!-- Balloons -->
-  <div class="balloon" style="left:10%; animation-delay: 0s;"></div>
-  <div class="balloon" style="left:30%; animation-delay: 1s; background:#ffcc99;"></div>
-  <div class="balloon" style="left:50%; animation-delay: 2s; background:#99ccff;"></div>
-  <div class="balloon" style="left:70%; animation-delay: 3s; background:#ccffcc;"></div>
-  <div class="balloon" style="left:90%; animation-delay: 4s; background:#ffccff;"></div>
-
-  <!-- Background music -->
-  <audio autoplay loop>
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
-    Your browser does not support the audio element.
-  </audio>
-
-  <section class="message">
-    <p><strong>From Sakshi:</strong><br>
-      Happiest Birthday, Adi! 🎂 Wishing you a day filled with smiles, laughter, and everything your heart desires. Thank you for being my constant through every high and low. I cherish all our moments of fun and joy. Stay blessed and keep shining always! 💖</p>
-    <p><strong>From Rishita:</strong><br>
-      You’ve filled my life with love and laughter. May this day bring you as much happiness as you’ve given me. Sending lots of love and blessings your way! 💖</p>
-  </section>
-
-  <section class="gallery">
-    <img src="https://sakshi0300.github.io/HappyBirthdayAdi/photo1.jpg" alt="Photo 1">
-    <img src="https://sakshi0300.github.io/HappyBirthdayAdi/photo2.jpg" alt="Photo 2">
-    <img src="https://sakshi0300.github.io/HappyBirthdayAdi/photo3.jpg" alt="Photo 3">
-    <img src="https://sakshi0300.github.io/HappyBirthdayAdi/photo5.jpg" alt="Photo 5">
-  </section>
-
-  <footer>
-    <p>🎈 Made with love for a very special person 💕</p>
-  </footer>
-
-  <!-- Confetti JS -->
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-  <script>
-    // Confetti burst on page load
-    window.onload = () => {
-      confetti({
-        particleCount: 200,
-        spread: 70,
-        origin: { y: 0.6 }
-      });
-    };
-  </script>
-</body>
-</html>
+    <div class="popper left">🎉</div>
+    <h1>Happy Birthday, Adi! 🎂</
