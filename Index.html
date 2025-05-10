@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday, Adi!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(to right, #2A7B9B, #57C785, #EDDD53); /* Blue gradient */
+    }
+    header {
+      padding: 40px 20px;
+      background-color: #4d88ff; /* Slightly darker blue for header */
+      color: white;
+      border-radius: 10px 10px 0 0;
+    }
+    header h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 3em;
+      margin: 0;
+    }
+    .gifts {
+      font-size: 2.5rem;
+      animation: bounce 1s infinite alternate;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 10px;
+    }
+    @keyframes bounce {
+      from { transform: scale(1); }
+      to { transform: scale(1.2); }
+    }
+    .message {
+      padding: 30px;
+      font-size: 1.2em;
+      background-color: white; /* White background for message */
+      border-radius: 5px;
+      margin-top: 20px;
+      color: #333;
+    }
+    .gallery {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+    }
+    .gallery img {
+      max-width: 250px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s;
+      flex-shrink: 0;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    footer {
+      background-color: #4d88ff;
+      color: white;
+      padding: 20px;
+      border-radius: 0 0 10px 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🎉 Happy Birthday, Adi! 🎉</h1>
+    <div class="gifts">
+      <span>🎁</span>
+      <span>🎁</span>
+      <span>🎁</span>
+    </div>
+  </header>
+
+  <section class="message">
+    <p><strong>From Rishita:</strong><br>
+      You’ve filled my life with love and laughter. May this day bring you as much happiness as you’ve given me. Sending lots of love and blessings your way! 💖</p>
+    <p><strong>From Sakshi:</strong><br>
+      Happiest Birthday, Adi! 🎂 Wishing you a day filled with smiles, laughter, and everything your heart desires. Thank you for being my constant through every high and low. I cherish all our moments of fun and joy. Stay blessed and keep shining always! 💖</p>
+  </section>
+
+  <section class="gallery">
+    <img src="https://sakshi0300.github.io/HappyBirthdayAdi/photo1.jpg" alt="Photo 1">
+    <img src="https://sakshi0300.github.io/HappyBirthdayAdi/photo2.jpg" alt="Photo 2">
+    <img src="https://sakshi0300.github.io/HappyBirthdayAdi/photo3.jpg" alt="Photo 3">
+    <img src="https://sakshi0300.github.io/HappyBirthdayAdi/photo5.jpg" alt="Photo 5">
+  </section>
+
+  <footer>
+    <p>🎈 Made with love for a very special person 💕</p>
+  </footer>
+
+  <!-- Confetti on load and click -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script>
+    function shootConfetti() {
+      confetti({
+        particleCount: 200,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
+    }
+
+    window.onload = shootConfetti;
+    document.addEventListener('click', shootConfetti);
+  </script>
+</body>
+</html>
