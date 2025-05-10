@@ -98,6 +98,55 @@
       color: white;
       padding: 20px;
     }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5em; /* Smaller font size for smaller screens */
+      }
+
+      .gifts {
+        font-size: 2rem; /* Adjusting gift emojis */
+      }
+
+      .message {
+        padding: 20px;
+        font-size: 1em; /* Smaller text for mobile */
+      }
+
+      .gallery {
+        flex-direction: column; /* Stack gallery images on top of each other */
+        gap: 10px;
+      }
+
+      .gallery img {
+        max-width: 90%; /* Allow images to be more flexible in width */
+      }
+    }
+
+    /* Extra small screens */
+    @media (max-width: 480px) {
+      header {
+        padding: 40px 10px; /* Adjust header padding */
+      }
+
+      header h1 {
+        font-size: 2em; /* Adjust header text size further */
+      }
+
+      .message {
+        padding: 15px;
+        font-size: 0.9em; /* Even smaller text for smaller devices */
+      }
+
+      footer {
+        padding: 15px; /* Adjust footer padding */
+      }
+
+      .gifts {
+        font-size: 1.5rem; /* Adjust gifts font size */
+      }
+    }
   </style>
 </head>
 <body>
